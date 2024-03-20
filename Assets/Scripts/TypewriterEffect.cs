@@ -32,14 +32,14 @@ public class TypewriterEffect : MonoBehaviour
         m_Message = message;
         m_IsEffectRunning = true;
 
-        //m_TypeWriterCoroutine = StartCoroutine(IncreaseMaxVisibleChar(message)); //This is the good one to use.
-        m_TypeWriterCoroutine = StartCoroutine(AppendCharsToUiText(message)); //This is the bad one. Here only for demonstration.
+        m_TypeWriterCoroutine = StartCoroutine(IncreaseMaxVisibleChar(message)); //This is the good one to use.
+        //m_TypeWriterCoroutine = StartCoroutine(AppendCharsToUiText(message)); //This is the bad one. Here only for demonstration.
     }
 
     //Characters will be appended to text mesh gradually (with an interval of time for each character) in this approach. NOT advised to use!
     IEnumerator AppendCharsToUiText(string message)
     {
-        m_TextMesh.text = ""; //Empty the content of the text mesh, because we will gradually append the characters
+        m_TextMesh.text = ""; //Empty the content of the text mesh, because we will append the characters one by one with time interval
         int index = 0;
         while (index < message.Length)
         {

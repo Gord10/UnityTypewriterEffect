@@ -152,12 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e2a2f10a596304bb0c7234bd0f5494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Message: Lorem ipsum dolor sit amet, consectetur<b> adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</b>,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_Message: Sample string to show with typewriter effect. This string is long, so
+    we can see how word warping and <i>rich</i> <b>text</b> looks like.
   m_TypewriterEffect: {fileID: 1924439498}
 --- !u!4 &43268741
 Transform:
@@ -449,7 +445,7 @@ GameObject:
   - component: {fileID: 1924439496}
   - component: {fileID: 1924439498}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Typewriter Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +468,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1629.3943, y: 757.5682}
+  m_SizeDelta: {x: 1633.0586, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924439496
 MonoBehaviour:
@@ -494,12 +490,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur<b> adipiscing elit, sed do eiusmod
+  m_text: 'Lorem ipsum dolor sit amet, consectetur<b> adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</b>,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -589,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TextMesh: {fileID: 1924439496}
-  m_CharSpeed: 60
+  m_CharSpeed: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
