@@ -9,3 +9,9 @@ This sample showcases two approaches:
 2. Increasing the max visible characters of a TextMeshPro text
 
 Appending characters is a commonly used, but a wrong approach that reduces the text readability and performance. The second approach eliminates those problems.
+
+## How to use
+
+<b>Typewriter Caller Sample object</b> in the sample scene has a TypewriterEffectCallerSample script, where you can set your sample string and the algorithm you want to try.
+
+TypewriterEffect script is placed on <b>Canvas/Typewriter Text (TMP)</b> object. Character/second speed is set there.
