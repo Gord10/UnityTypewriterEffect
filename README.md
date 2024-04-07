@@ -8,7 +8,7 @@ This sample showcases two approaches:
 1. Appending characters to a TextMeshPro text
 2. Increasing the max visible characters of a TextMeshPro text
 
-Appending characters is a commonly used, but a wrong approach that reduces the text readability and performance. The second approach eliminates those problems.
+Appending characters is a commonly used, but a wrong approach that reduces the text readability and performance. The second approach eliminates those problems, as explained in my Medium article.
 
 ## How to use
 
