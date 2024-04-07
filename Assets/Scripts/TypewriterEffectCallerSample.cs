@@ -11,9 +11,13 @@ public class TypewriterEffectCallerSample : MonoBehaviour
     [SerializeField]
     TypewriterEffect m_TypewriterEffect;
 
+    [Tooltip("The approach we will use for showing a typewriter effect")]
+    [SerializeField]
+    TypewriterEffect.TypewriterAlgorithm m_TypewriterAlgorithm;
+
     // Start is called before the first frame update
     void Start()
     {
-        m_TypewriterEffect.StartEffect(m_Message);
+        m_TypewriterEffect.StartEffect(m_Message, m_TypewriterAlgorithm);
     }
 }

@@ -18,6 +18,12 @@ public class TypewriterEffect : MonoBehaviour
     bool m_IsEffectRunning = false;
     public bool IsRunning => m_IsEffectRunning;
 
+    public enum TypewriterAlgorithm
+    {
+        MaxVisibleCharIncrease,
+        AppendChar
+    }
+
     public float TimeInterval => (1f / m_CharSpeed); //Calculated each time we need to get this value, in case we change effect speed while this effect is still running
 
     string m_Message; //The string we will show to the player with this typewriter effect
@@ -27,13 +33,21 @@ public class TypewriterEffect : MonoBehaviour
         m_TextMesh.text = ""; //Make sure the default content of text mesh won't be seen, even for a glimpse of a frame
     }
 
-    public void StartEffect(string message)
+    public void StartEffect(string message, TypewriterAlgorithm algorithm)
     {
         m_Message = message;
         m_IsEffectRunning = true;
 
-        m_TypeWriterCoroutine = StartCoroutine(IncreaseMaxVisibleChar(message)); //This is the good one to use.
-        //m_TypeWriterCoroutine = StartCoroutine(AppendCharsToUiText(message)); //This is the bad one. Here only for demonstration.
+        switch(algorithm)
+        {
+            case TypewriterAlgorithm.MaxVisibleCharIncrease:
+                StartCoroutine(IncreaseMaxVisibleChar(message)); //This is the good one to use.
+                break;
+
+            case TypewriterAlgorithm.AppendChar:
+                StartCoroutine(AppendCharsToUiText(message)); //This is the bad one. Here only for demonstration.
+                break;
+        }
     }
 
     //Characters will be appended to text mesh gradually (with an interval of time for each character) in this approach. NOT advised to use!
@@ -41,11 +55,13 @@ public class TypewriterEffect : MonoBehaviour
     {
         m_TextMesh.text = ""; //Empty the content of the text mesh, because we will append the characters one by one with time interval
         int index = 0;
+        WaitForSeconds wait = new WaitForSeconds(TimeInterval);
+
         while (index < message.Length)
         {
             m_TextMesh.text += message[index]; //Append the character into text mesh
             index++;
-            yield return new WaitForSeconds(TimeInterval);
+            yield return wait;
         }
 
         print("Typewriter effect is completed");
@@ -59,10 +75,12 @@ public class TypewriterEffect : MonoBehaviour
 
         m_TextMesh.maxVisibleCharacters = 0;
         int messageCharLength = message.Length;
+        WaitForSeconds wait = new WaitForSeconds(TimeInterval);
+
         while (m_TextMesh.maxVisibleCharacters < messageCharLength)
         {
             m_TextMesh.maxVisibleCharacters++;
-            yield return new WaitForSeconds(TimeInterval);
+            yield return wait;
         }
 
         m_IsEffectRunning = false;

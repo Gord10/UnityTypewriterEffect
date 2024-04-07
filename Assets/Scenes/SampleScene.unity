@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Message: Sample string to show with typewriter effect. This string is long, so
     we can see how word warping and <i>rich</i> <b>text</b> looks like.
   m_TypewriterEffect: {fileID: 1924439498}
+  m_TypewriterAlgorithm: 0
 --- !u!4 &43268741
 Transform:
   m_ObjectHideFlags: 0
