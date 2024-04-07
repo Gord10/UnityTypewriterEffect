@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.VersionControl;
+
 public class TypewriterEffect : MonoBehaviour
 {
     [Tooltip("Text mesh that the message will be written at")]
@@ -55,7 +54,7 @@ public class TypewriterEffect : MonoBehaviour
     {
         m_TextMesh.text = ""; //Empty the content of the text mesh, because we will append the characters one by one with time interval
         int index = 0;
-        WaitForSeconds wait = new WaitForSeconds(TimeInterval);
+        WaitForSeconds wait = new(TimeInterval);
 
         while (index < message.Length)
         {
@@ -75,7 +74,7 @@ public class TypewriterEffect : MonoBehaviour
 
         m_TextMesh.maxVisibleCharacters = 0;
         int messageCharLength = message.Length;
-        WaitForSeconds wait = new WaitForSeconds(TimeInterval);
+        WaitForSeconds wait = new(TimeInterval);
 
         while (m_TextMesh.maxVisibleCharacters < messageCharLength)
         {
